@@ -2,14 +2,28 @@ import java.util.*;
 public class RunBloodData {
     public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    BloodData bd = new BloodData();
-    
+
     System.out.println("Enter blood type of the patient : ");
-    String bt =scanner.nextLine();
+    String bt = scanner.nextLine();
     System.out.println("Enter the Rhesus factor (+ or -) : ");
-    String rh= scanner.nextLine();
+    String rh = scanner.nextLine();
+    BloodData bd = new BloodData(bt,rh);
+    if (bt.equals("") || rh.equals("")) {
+    bd = new BloodData();
+    } else {
+    bd = new BloodData(bt, rh);
+    }
     bd.display();
 
+    System.out.println("");
+
+    System.out.println("Enter blood type of the patient : ");
+    String bt1 = scanner.nextLine();
+    System.out.println("Enter the Rhesus factor (+ or -) : ");
+    String rh1 = scanner.nextLine();
+    BloodData bd1 = new BloodData(bt1,rh1);
+    bd1.display();
+    
 }
 }
 class BloodData{
@@ -17,13 +31,13 @@ class BloodData{
      String rhFactor;
     
     public BloodData(){
-        this.bloodType = "O";
-        this.rhFactor = "+";
+        bloodType = "O";
+        rhFactor = "+";
     }
 
     public BloodData(String bt, String rh){
-        bt = bloodType;
-        rh= rhFactor;
+        this.bloodType = bt;;
+        this.rhFactor = rh;
     }
 
     public void display(){
