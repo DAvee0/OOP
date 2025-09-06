@@ -1,0 +1,51 @@
+public class Student {
+    String name;
+    int age;
+    String course;
+
+    public Student(){
+        System.out.println("Constructor 1 called: Default values assigned.");
+        name = "unknown";
+        age = 0;
+        course = "Undeclared";
+    }
+
+    public Student(String name){
+        System.out.println("Constructor 2 called: Name assigned.");
+        name = name;
+        age = 18;
+        course = "Undeclared";
+    }
+
+    public Student(String name, int age){
+        System.out.println("Constructor 3 called: Name and age assigned.");
+        this.name = name;
+        this.age = 18;
+        course = "Undeclared";
+    }
+
+    public Student(String name, int age, String course){
+        System.out.println("Constructor 4 called: All fields assigned.");
+        this.name = name;
+        this.age = age;
+        this.course = course;
+    }
+
+    public void display(){
+        System.out.println("Student Info -> Name: "+name+", Age: "+age+", Course: "+course);
+
+    }
+
+    public static void main(String[] args){
+        Student s1 = new Student();
+        Student s2 = new Student("Alice");
+        Student s3 = new Student("Bob",22);
+        Student s4 = new Student("Charlie", 25,"Java");
+        s1.display();
+        s2.display();
+        s3.display();
+        s4.display();
+
+    }
+
+}
