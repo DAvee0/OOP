@@ -1,0 +1,96 @@
+import java.util.*;
+class Person{
+    private String name;
+    private String contactNum;
+
+    public void setName(String n){
+    this.name = n;
+    }
+    public void setContactNum(String c){
+        this.contactNum = c;
+    }
+
+    public String getName(){
+        return name;}
+
+    public String getContactNum(){
+        return contactNum; }
+}
+
+class Student extends Person{
+    private String program;
+    private int yearLevel;
+
+    public void setProgram(Integer p){}
+    public void seYearLevel(){}
+
+    public String getProgram(String y){
+        return program;
+    }
+    public int getYearLevel(){
+        return yearLevel;
+    }
+
+}
+
+class Employee extends Person{
+    private double salary;
+    private String department;
+
+    public void setSalary(double s){}
+    public void setDepartment(String d){
+        this.department = d;
+    }
+
+    public double getSalary(){
+        return salary;
+    }
+
+    public String setDapartment(){
+        return department;
+    }
+
+}
+class Faculty extends Employee{
+    private boolean status;
+
+    public boolean isRegular(){
+        return status;
+    }
+
+}
+
+public class CollegeList {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Press E for (Employee), F for (Faculty, S for (Student)");
+        String input = sc.nextLine();
+
+        if(input.equalsIgnoreCase("E")){
+          Employee emp = new Employee();
+          System.out.println("Enter your Name: ");
+          emp.setName(sc.nextLine());
+          System.out.println("Enter Contact Number: ");
+          emp.setContactNum(sc.nextLine());
+          System.out.println("Enter Department: ");
+          emp.setDepartment(sc.nextLine());
+
+
+          System.out.println(emp.getName());
+          System.out.println(emp.getContactNum());
+          System.out.println(emp.setDapartment());
+
+        }
+        if(input.equalsIgnoreCase("F")){
+
+        }
+
+        
+
+
+        
+
+
+        
+    }
+}
